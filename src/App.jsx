@@ -31,7 +31,7 @@ function NotFoundPage() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/nutrilens">
       <AppProvider>
         {/* Floating background shapes (fixed, behind everything) */}
         <FloatingShapes />
