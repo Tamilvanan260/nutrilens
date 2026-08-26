@@ -1,21 +1,65 @@
-# 🥗 NutriLens — Nutrition Explorer Website
+# 🥗 NutriLens — India's Nutrition Explorer
 
-A premium, interactive React + Vite nutrition website for 60+ Indian foods across 4 categories. Data-driven from CSV files. No paid APIs required.
+<div align="center">
+
+![NutriLens Banner](https://img.shields.io/badge/NutriLens-Nutrition%20Explorer-4ade80?style=for-the-badge&logo=leaflet&logoColor=white)
+
+**Explore Food. Understand Nutrition. Eat Smarter.**
+
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
+[![React Router](https://img.shields.io/badge/React_Router-v6-CA4245?style=flat-square&logo=reactrouter&logoColor=white)](https://reactrouter.com)
+[![PapaParse](https://img.shields.io/badge/PapaParse-CSV-orange?style=flat-square)](https://www.papaparse.com)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+
+</div>
 
 ---
 
-## 🚀 Quick Start
+## 📖 About
 
-### Prerequisites
-Install **Node.js** (v18+) from https://nodejs.org if not installed.
+**NutriLens** is a modern, interactive nutrition website that lets you explore **60+ Indian foods** across 4 categories. All nutrition data is sourced from the **Indian Food Composition Tables (IFCT 2017)** and loaded dynamically from CSV files — no hardcoded values, no paid APIs.
 
-### Install & Run
-```bash
-cd d:\Nutrition\nutrilens
-npm install
-npm run dev
-```
-Then open: http://localhost:5173
+Built with a **floating cartoon UI** theme — vibrant, premium, and data-driven.
+
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---|---|
+| 🍎 **4 Categories** | Fruits, Vegetables, Nuts & Seeds, Dairy & Milk Products |
+| 📊 **CSV-Driven Data** | All nutrition info loaded from IFCT CSV files — nothing hardcoded |
+| 🔍 **Global Search** | Instant search by name, scientific name, or category |
+| 🔽 **Filter & Sort** | Filter by category + 8 sort options (A-Z, highest protein, etc.) |
+| 📈 **Nutrient Explorer** | Rank all 60 foods by any of 11 nutrients with progress bars |
+| ⚖️ **Food Comparison** | Side-by-side nutrition comparison of any 2 foods |
+| ❤️ **Favorites** | Save foods to your personal favorites (stored in browser) |
+| 🕐 **Recently Viewed** | Last 5 viewed foods shown on the homepage |
+| 🔍 **Image Lightbox** | Click any food image to zoom with keyboard support |
+| 💚 **Health Benefits** | Full benefit descriptions with smart emoji icons |
+| 🍽️ **Intake Methods** | Step-by-step guide on how to eat each food |
+| 📱 **Fully Responsive** | Works on mobile, tablet, and desktop |
+| ♿ **Accessible** | ARIA labels, keyboard navigation, semantic HTML |
+| 🌙 **Floating UI** | Animated blobs, glassmorphism, floating cards |
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **HTML5** | Page structure & SEO meta tags |
+| **CSS3 (Vanilla)** | Design system, animations, glassmorphism |
+| **JavaScript (ES6+)** | All logic and data handling |
+| **React 18** | UI components and state management |
+| **Vite 5** | Development server & production build |
+| **React Router v6** | Client-side page routing |
+| **PapaParse** | CSV file parsing |
+| **Google Fonts** | Nunito (headings) + Inter (body) |
+| **localStorage** | Favorites & recently viewed persistence |
+
+> ⚡ **No backend. No database. No paid APIs.** Everything runs in the browser.
 
 ---
 
@@ -24,33 +68,99 @@ Then open: http://localhost:5173
 ```
 nutrilens/
 ├── public/
-│   ├── data/                    ← CSV data files (auto-loaded)
-│   │   ├── fruits.csv
-│   │   ├── vegetables.csv
-│   │   ├── nuts_seeds.csv
-│   │   └── dairy_milk_products.csv
-│   └── images/                  ← YOUR food images go here
-│       ├── fruits/              (20 images)
-│       ├── vegetables/          (20 images)
-│       ├── nuts-seeds/          (10 images)
-│       └── dairy/               (10 images)
+│   ├── data/                        ← CSV nutrition data files
+│   │   ├── fruits.csv               (20 foods)
+│   │   ├── vegetables.csv           (20 foods)
+│   │   ├── nuts_seeds.csv           (10 foods)
+│   │   └── dairy_milk_products.csv  (10 foods)
+│   └── images/                      ← Food images (you add these)
+│       ├── fruits/                  (20 PNG files)
+│       ├── vegetables/              (20 PNG files)
+│       ├── nuts-seeds/              (10 PNG files)
+│       └── dairy/                   (10 PNG files)
 ├── src/
-│   ├── components/              (16 reusable components)
-│   ├── pages/                   (6 pages)
-│   ├── context/                 (global state)
-│   ├── hooks/                   (favorites, recently viewed)
-│   ├── services/                (CSV data loader)
-│   └── utils/                   (slugify, normalize)
-└── package.json
+│   ├── components/                  ← 16 reusable React components
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── FoodCard.jsx
+│   │   ├── FoodImage.jsx
+│   │   ├── CategoryCard.jsx
+│   │   ├── NutritionGrid.jsx
+│   │   ├── HealthBenefits.jsx
+│   │   ├── IntakeMethods.jsx
+│   │   ├── ComparisonTable.jsx
+│   │   ├── SearchBar.jsx
+│   │   ├── FilterBar.jsx
+│   │   ├── ImageModal.jsx
+│   │   ├── FavoriteButton.jsx
+│   │   ├── FloatingShapes.jsx
+│   │   ├── LoadingSpinner.jsx
+│   │   └── NutritionCard.jsx
+│   ├── pages/                       ← 6 pages
+│   │   ├── HomePage.jsx             (Hero, categories, recently viewed)
+│   │   ├── ExplorePage.jsx          (All foods with filter/sort)
+│   │   ├── CategoryPage.jsx         (Foods for one category)
+│   │   ├── FoodDetailPage.jsx       (Full nutrition detail)
+│   │   ├── FavoritesPage.jsx        (Saved favorites)
+│   │   └── NutrientExplorerPage.jsx (Rank by nutrient)
+│   ├── context/
+│   │   └── AppContext.jsx           ← Global state (foods, favorites, search)
+│   ├── hooks/
+│   │   ├── useFavorites.js          ← Favorites with localStorage
+│   │   └── useRecentlyViewed.js     ← Recently viewed with localStorage
+│   ├── services/
+│   │   └── dataLoader.js            ← CSV fetching, parsing, search, sort
+│   ├── utils/
+│   │   ├── normalize.js             ← Maps CSV columns → unified food schema
+│   │   └── slugify.js               ← Food name → URL slug & image filename
+│   ├── App.jsx                      ← Router + layout shell
+│   ├── main.jsx                     ← React entry point
+│   └── index.css                    ← Complete design system (1100+ lines)
+├── index.html
+├── vite.config.js
+├── package.json
+└── README.md
 ```
 
 ---
 
-## 🖼️ Image Files — Place Your Images Here
+## 🚀 Getting Started
 
-Place your **61 AI-generated PNG images** into the correct folders:
+### Prerequisites
 
-### 📁 `public/images/fruits/` (20 images)
+Install **Node.js** (v18 or later) → https://nodejs.org
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/YOUR-USERNAME/nutrilens.git
+
+# 2. Navigate into the project
+cd nutrilens
+
+# 3. Install dependencies
+npm install
+
+# 4. Start development server
+npm run dev
+```
+
+Open **http://localhost:5173** in your browser 🎉
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+---
+
+## 🖼️ Adding Food Images
+
+Place your **PNG images** in the correct folders with exact filenames:
+
+### 📁 `public/images/fruits/` — 20 files
 | Filename | Food |
 |---|---|
 | `amla.png` | Amla / Indian Gooseberry |
@@ -58,23 +168,23 @@ Place your **61 AI-generated PNG images** into the correct folders:
 | `banana.png` | Banana (Robusta) |
 | `orange.png` | Orange |
 | `mosambi.png` | Sweet Lime / Mosambi |
-| `guava.png` | Guava (White Flesh) |
-| `mango.png` | Mango (Ripe Banganapalli) |
-| `papaya.png` | Papaya (Ripe) |
+| `guava.png` | Guava |
+| `mango.png` | Mango |
+| `papaya.png` | Papaya |
 | `pomegranate.png` | Pomegranate |
 | `pineapple.png` | Pineapple |
 | `watermelon.png` | Watermelon |
 | `muskmelon.png` | Muskmelon |
-| `grapes.png` | Grapes (Seedless Green) |
-| `jackfruit.png` | Jackfruit (Ripe) |
+| `grapes.png` | Grapes |
+| `jackfruit.png` | Jackfruit |
 | `sapota.png` | Sapota / Chikoo |
 | `pear.png` | Pear |
 | `strawberry.png` | Strawberry |
 | `kiwi.png` | Kiwi |
-| `jamun.png` | Jamun / Indian Blackberry |
-| `coconut.png` | Coconut (Fresh Kernel) |
+| `jamun.png` | Jamun |
+| `coconut.png` | Coconut |
 
-### 📁 `public/images/vegetables/` (20 images)
+### 📁 `public/images/vegetables/` — 20 files
 | Filename | Food |
 |---|---|
 | `tomato.png` | Tomato |
@@ -87,22 +197,22 @@ Place your **61 AI-generated PNG images** into the correct folders:
 | `okra.png` | Okra / Ladies Finger |
 | `cauliflower.png` | Cauliflower |
 | `broccoli.png` | Broccoli |
-| `cabbage.png` | Cabbage (Green) |
+| `cabbage.png` | Cabbage |
 | `cucumber.png` | Cucumber |
-| `bottle-gourd.png` | Bottle Gourd / Sorakkai |
-| `bitter-gourd.png` | Bitter Gourd / Pavakkai |
-| `ridge-gourd.png` | Ridge Gourd / Peerkangai |
-| `pumpkin.png` | Pumpkin / Parangikkai |
-| `drumstick.png` | Drumstick / Moringa Pods |
-| `green-peas.png` | Green Peas (Fresh) |
+| `bottle-gourd.png` | Bottle Gourd |
+| `bitter-gourd.png` | Bitter Gourd |
+| `ridge-gourd.png` | Ridge Gourd |
+| `pumpkin.png` | Pumpkin |
+| `drumstick.png` | Drumstick / Moringa |
+| `green-peas.png` | Green Peas |
 | `french-beans.png` | French Beans |
 | `capsicum.png` | Capsicum / Bell Pepper |
 
-### 📁 `public/images/nuts-seeds/` (10 images)
+### 📁 `public/images/nuts-seeds/` — 10 files
 | Filename | Food |
 |---|---|
 | `almond.png` | Almond |
-| `peanut.png` | Peanut / Groundnut |
+| `peanut.png` | Peanut |
 | `cashew.png` | Cashew |
 | `walnut.png` | Walnut |
 | `pistachio.png` | Pistachio |
@@ -110,9 +220,9 @@ Place your **61 AI-generated PNG images** into the correct folders:
 | `pumpkin-seeds.png` | Pumpkin Seeds |
 | `flax-seeds.png` | Flax Seeds |
 | `chia-seeds.png` | Chia Seeds |
-| `sesame-seeds.png` | Sesame Seeds (White) |
+| `sesame-seeds.png` | Sesame Seeds |
 
-### 📁 `public/images/dairy/` (10 images)
+### 📁 `public/images/dairy/` — 10 files
 | Filename | Food |
 |---|---|
 | `cow-milk.png` | Cow Milk |
@@ -124,46 +234,103 @@ Place your **61 AI-generated PNG images** into the correct folders:
 | `ghee.png` | Ghee |
 | `greek-yogurt.png` | Greek Yogurt |
 | `lassi.png` | Lassi |
-| `egg.png` | Egg (Whole) |
+| `egg.png` | Egg |
 
-> **Important:** Filenames must match exactly (lowercase, hyphens for spaces).
-> If an image is missing, the website shows a fallback emoji — it won't crash.
-
----
-
-## ✨ Features
-
-| Feature | Details |
-|---|---|
-| 🍎 4 Categories | Fruits, Vegetables, Nuts & Seeds, Dairy |
-| 📊 CSV Data | Loaded dynamically — no hardcoding |
-| 🔍 Global Search | Name, scientific name, category |
-| 🔽 Filter & Sort | By category + 8 sort options |
-| 📈 Nutrient Explorer | Rank all foods by any nutrient |
-| ⚖️ Compare | Side-by-side comparison of any 2 foods |
-| ❤️ Favorites | Saved to localStorage |
-| 🕐 Recently Viewed | Last 5 foods on homepage |
-| 🔍 Image Lightbox | Zoom, keyboard, mobile-friendly |
-| 📱 Responsive | Mobile, tablet, desktop |
-| ♿ Accessible | ARIA labels, keyboard nav, alt text |
+> 💡 If an image is missing, the website shows a fallback emoji — it will never crash.
 
 ---
 
-## 🔧 Technology
+## 🌐 Deployment
 
-- **React 18** + **Vite 5**
-- **React Router v6** — client-side routing
-- **PapaParse** — CSV parsing
-- **Vanilla CSS** — custom design system
-- **Google Fonts** — Nunito + Inter
-- **localStorage** — favorites & recently viewed
+### Deploy on Vercel (Free)
+
+1. Push your code to GitHub
+2. Go to **https://vercel.com** → Sign in with GitHub
+3. Click **"Add New Project"** → Select `nutrilens`
+4. Click **Deploy** — Vercel auto-detects Vite!
+5. Your site goes live at `https://nutrilens.vercel.app`
+
+> Every `git push` triggers an automatic re-deployment! 🚀
+
+### Deploy on Netlify (Free)
+
+```bash
+npm run build
+# then drag & drop the 'dist/' folder to netlify.com/drop
+```
 
 ---
 
-## ⚠️ Notes
+## 📊 Data Sources
 
-- Dairy CSV has **10 foods** (not 11 as originally planned)
-- Nuts & Seeds don't have Vitamin C/Potassium — shows "Not available"
-- Dairy doesn't have Scientific Name — shows "Not available"
-- All data from IFCT 2017 (Indian Food Composition Tables)
-- No paid APIs used anywhere
+All nutrition data is from the **Indian Food Composition Tables (IFCT 2017)** published by the National Institute of Nutrition (NIN), India.
+
+> ⚠️ Nutrition values are per **100g edible portion** unless otherwise stated. This data is for **educational purposes only** — not medical advice.
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit changes: `git commit -m "Add your feature"`
+4. Push to branch: `git push origin feature/your-feature`
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👨‍💻 Built With
+
+- ❤️ React + Vite
+- 📊 IFCT 2017 Nutrition Data
+- 🎨 Vanilla CSS Design System
+- 🌿 Floating UI Aesthetic
+
+---
+
+<div align="center">
+
+**⭐ Star this repo if you found it useful!**
+
+Made with ❤️ for healthy eating and better nutrition awareness
+
+</div>
+
+
+🛠️ Technologies Used in This Project
+🏗️ Core Framework
+Tech	What it does
+React 18	JavaScript library for building the UI (components, pages)
+Vite 5	Super-fast development server & build tool
+JSX	HTML-like syntax written inside JavaScript files (.jsx)
+🌐 Languages
+Language	Where used
+HTML	index.html — page structure & SEO meta tags
+CSS	src/index.css — all styling, animations, design system
+JavaScript (ES6+)	All logic, data loading, state management
+📦 Libraries / Packages
+Library	What it does
+React Router v6	Navigation between pages (Home → Explore → Food Detail)
+PapaParse	Reads and parses the .csv data files
+💾 Data Storage
+Storage	What it stores
+CSV files	All 60 food nutrition data (in public/data/)
+localStorage	Favorites & recently viewed (saved in browser)
+🎨 Design
+Tool	What it does
+Google Fonts	Nunito (headings) + Inter (body text)
+Vanilla CSS	Custom design system — no Tailwind, no Bootstrap
+CSS Variables	Colors, spacing, shadows defined as reusable tokens
+📁 In Simple Terms
+index.html          → HTML (page skeleton)
+src/index.css       → CSS (all styles & animations)
+src/*.jsx           → JavaScript + React (all logic & UI)
+public/data/*.csv   → CSV data files (food nutrition)
+public/images/      → PNG food images (you add these)
+No backend. No database. No server required. Everything runs in the browser! 🚀
