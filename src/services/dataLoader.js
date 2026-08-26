@@ -13,11 +13,13 @@ import {
   normalizeDairy,
 } from '../utils/normalize.js';
 
+const BASE = import.meta.env.BASE_URL; // '/' in dev, '/nutrilens/' in production
+
 const CSV_FILES = [
-  { path: '/data/fruits.csv',             normalize: normalizeFruit,     category: 'Fruits' },
-  { path: '/data/vegetables.csv',         normalize: normalizeVegetable, category: 'Vegetables' },
-  { path: '/data/nuts_seeds.csv',         normalize: normalizeNut,       category: 'Nuts & Seeds' },
-  { path: '/data/dairy_milk_products.csv',normalize: normalizeDairy,     category: 'Dairy & Milk Products' },
+  { path: `${BASE}data/fruits.csv`,             normalize: normalizeFruit,     category: 'Fruits' },
+  { path: `${BASE}data/vegetables.csv`,         normalize: normalizeVegetable, category: 'Vegetables' },
+  { path: `${BASE}data/nuts_seeds.csv`,         normalize: normalizeNut,       category: 'Nuts & Seeds' },
+  { path: `${BASE}data/dairy_milk_products.csv`,normalize: normalizeDairy,     category: 'Dairy & Milk Products' },
 ];
 
 // Simple in-memory cache
