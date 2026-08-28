@@ -7,13 +7,14 @@ import CategoryCard from '../components/CategoryCard.jsx';
 import LoadingSpinner from '../components/LoadingSpinner.jsx';
 import FoodCard from '../components/FoodCard.jsx';
 
-const CATEGORY_ORDER = ['Fruits', 'Vegetables', 'Nuts & Seeds', 'Dairy & Milk Products'];
+const CATEGORY_ORDER = ['Fruits', 'Vegetables', 'Nuts & Seeds', 'Dairy & Milk Products', 'Meat & Seafood'];
 
 const HERO_FOOD_ICONS = [
   { emoji: '🍎', top: '15%', left: '68%',  delay: '0s',   size: '3.5rem', dur: '5s'  },
   { emoji: '🥕', top: '35%', left: '82%',  delay: '0.8s', size: '2.8rem', dur: '6.5s'},
   { emoji: '🌰', top: '65%', left: '72%',  delay: '1.5s', size: '2.5rem', dur: '5.5s'},
   { emoji: '🥛', top: '78%', left: '88%',  delay: '2s',   size: '2.8rem', dur: '7s'  },
+  { emoji: '🍗', top: '48%', left: '75%',  delay: '1.8s', size: '2.4rem', dur: '6s'  },
   { emoji: '🍋', top: '52%', left: '60%',  delay: '0.4s', size: '2rem',   dur: '4.5s'},
   { emoji: '🫐', top: '20%', left: '90%',  delay: '1.2s', size: '2.2rem', dur: '6s'  },
   { emoji: '🥦', top: '88%', left: '65%',  delay: '2.5s', size: '2rem',   dur: '5s'  },
@@ -62,7 +63,7 @@ export default function HomePage() {
                 <span className="hero-stat-label">Foods</span>
               </div>
               <div className="hero-stat">
-                <span className="hero-stat-value">4</span>
+                <span className="hero-stat-value">{CATEGORY_ORDER.length}</span>
                 <span className="hero-stat-label">Categories</span>
               </div>
               <div className="hero-stat">

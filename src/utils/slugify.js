@@ -10,6 +10,23 @@
 // Primary name is the part before the first " / "
 export function slugify(name) {
   if (!name) return '';
+
+  // Explicit slug mapping for multi-part food names
+  const customSlugs = {
+    'Chicken (Skinless)': 'chicken-skinless',
+    'Mutton / Goat Meat': 'mutton-goat-meat',
+    'Vanjaram / Seer Fish (King Mackerel)': 'vanjaram-seer-fish',
+    'Sankara / Red Snapper': 'sankara-red-snapper',
+    'Nethili / Anchovy': 'nethili-anchovy',
+    'Mathi / Sardine': 'mathi-sardine',
+    'Vavval / White Pomfret': 'vavval-white-pomfret',
+    'Prawn / Eral': 'prawn-eral',
+    'Goat Blood / Ratham': 'goat-blood-ratham',
+    'Dates (Dry)': 'dates-dry',
+  };
+
+  if (customSlugs[name]) return customSlugs[name];
+
   const primary = name.split('/')[0].trim();
   return primary
     .toLowerCase()

@@ -27,6 +27,12 @@ const CATEGORY_CONFIG = {
     description: 'Calcium-rich & probiotic foods',
     cssClass: 'cat-dairy',
   },
+  'Meat & Seafood': {
+    slug: 'meat-seafood',
+    emoji: '🍗',
+    description: 'Explore nutritious meat and seafood options.',
+    cssClass: 'cat-meat',
+  },
 };
 
 export default function CategoryCard({ category, count }) {

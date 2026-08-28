@@ -8,10 +8,11 @@ import FilterBar from '../components/FilterBar.jsx';
 import LoadingSpinner from '../components/LoadingSpinner.jsx';
 
 const SLUG_TO_CATEGORY = {
-  'fruits':      'Fruits',
-  'vegetables':  'Vegetables',
-  'nuts-seeds':  'Nuts & Seeds',
-  'dairy':       'Dairy & Milk Products',
+  'fruits':       'Fruits',
+  'vegetables':   'Vegetables',
+  'nuts-seeds':   'Nuts & Seeds',
+  'dairy':        'Dairy & Milk Products',
+  'meat-seafood': 'Meat & Seafood',
 };
 
 const CATEGORY_EMOJI = {
@@ -19,6 +20,7 @@ const CATEGORY_EMOJI = {
   Vegetables: '🥕',
   'Nuts & Seeds': '🌰',
   'Dairy & Milk Products': '🥛',
+  'Meat & Seafood': '🍗',
 };
 
 const CATEGORY_DESCRIPTION = {
@@ -26,6 +28,7 @@ const CATEGORY_DESCRIPTION = {
   Vegetables: 'Colorful powerhouses of minerals, dietary fiber, and protective phytochemicals.',
   'Nuts & Seeds': 'Calorie-dense, nutrient-rich snacks full of healthy fats and plant proteins.',
   'Dairy & Milk Products': 'Calcium-rich foods for bone strength, muscle repair, and probiotic health.',
+  'Meat & Seafood': 'High-quality protein, essential amino acids, heme iron, and marine Omega-3 fatty acids.',
 };
 
 function sortFoods(foods, sortBy) {

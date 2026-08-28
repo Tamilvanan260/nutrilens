@@ -57,6 +57,8 @@
   --cat-nuts-bg:      #fff8ef;
   --cat-dairy:        #74c0fc;
   --cat-dairy-bg:     #f0f9ff;
+  --cat-meat:         #ff5252;
+  --cat-meat-bg:      #fff2f2;
 
   /* Shadows */
   --shadow-sm:        0 2px 8px rgba(0, 0, 0, 0.06);
@@ -249,10 +251,11 @@ ul, ol {
 }
 
 /* ---------- Category Color Utilities ---------- */
-.cat-fruits    { --cat-color: var(--cat-fruits);  --cat-bg: var(--cat-fruits-bg); }
+.cat-fruits     { --cat-color: var(--cat-fruits);  --cat-bg: var(--cat-fruits-bg); }
 .cat-vegetables { --cat-color: var(--cat-veggies); --cat-bg: var(--cat-veggies-bg); }
-.cat-nuts      { --cat-color: var(--cat-nuts);    --cat-bg: var(--cat-nuts-bg); }
-.cat-dairy     { --cat-color: var(--cat-dairy);   --cat-bg: var(--cat-dairy-bg); }
+.cat-nuts       { --cat-color: var(--cat-nuts);    --cat-bg: var(--cat-nuts-bg); }
+.cat-dairy      { --cat-color: var(--cat-dairy);   --cat-bg: var(--cat-dairy-bg); }
+.cat-meat       { --cat-color: var(--cat-meat);    --cat-bg: var(--cat-meat-bg); }
 
 /* ---------- Badge ---------- */
 .badge {

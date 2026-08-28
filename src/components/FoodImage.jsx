@@ -7,6 +7,7 @@ const CATEGORY_FALLBACK = {
   Vegetables: '🥕',
   'Nuts & Seeds': '🌰',
   'Dairy & Milk Products': '🥛',
+  'Meat & Seafood': '🍗',
 };
 
 export default function FoodImage({

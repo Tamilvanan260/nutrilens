@@ -24,6 +24,7 @@ const CATEGORY_NUTRIENTS = {
   'Vegetables':           ['calories','vitamin_c','protein','fiber','calcium','iron','carbohydrates','fat','potassium'],
   'Nuts & Seeds':         ['calories','protein','fiber','calcium','iron','carbohydrates','fat','magnesium','vitamin_e'],
   'Dairy & Milk Products':['calories','vitamin_c','protein','calcium','iron','carbohydrates','fat'],
+  'Meat & Seafood':       ['calories','vitamin_c','protein','fiber','calcium','iron','carbohydrates','fat'],
 };
 
 export default function NutritionGrid({ food }) {

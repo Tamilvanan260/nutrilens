@@ -13,10 +13,11 @@ const SORT_OPTIONS = [
 
 const CATEGORY_FILTERS = [
   { value: 'all',                     label: '🌍 All' },
-  { value: 'Fruits',                   label: '🍎 Fruits' },
-  { value: 'Vegetables',               label: '🥕 Vegetables' },
-  { value: 'Nuts & Seeds',             label: '🌰 Nuts & Seeds' },
-  { value: 'Dairy & Milk Products',    label: '🥛 Dairy' },
+  { value: 'Fruits',                  label: '🍎 Fruits' },
+  { value: 'Vegetables',              label: '🥕 Vegetables' },
+  { value: 'Nuts & Seeds',            label: '🌰 Nuts & Seeds' },
+  { value: 'Dairy & Milk Products',   label: '🥛 Dairy' },
+  { value: 'Meat & Seafood',          label: '🍗 Meat & Seafood' },
 ];
 
 export default function FilterBar({

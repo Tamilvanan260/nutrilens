@@ -21,10 +21,11 @@ export default function Footer() {
           <div>
             <div className="footer-section-title">Categories</div>
             <nav className="footer-links" aria-label="Food categories">
-              <Link to="/category/fruits"     className="footer-link">🍎 Fruits</Link>
-              <Link to="/category/vegetables" className="footer-link">🥕 Vegetables</Link>
-              <Link to="/category/nuts-seeds" className="footer-link">🌰 Nuts & Seeds</Link>
-              <Link to="/category/dairy"      className="footer-link">🥛 Dairy & Milk Products</Link>
+              <Link to="/category/fruits"       className="footer-link">🍎 Fruits</Link>
+              <Link to="/category/vegetables"   className="footer-link">🥕 Vegetables</Link>
+              <Link to="/category/nuts-seeds"   className="footer-link">🌰 Nuts & Seeds</Link>
+              <Link to="/category/dairy"        className="footer-link">🥛 Dairy & Milk Products</Link>
+              <Link to="/category/meat-seafood" className="footer-link">🍗 Meat & Seafood</Link>
             </nav>
           </div>
 

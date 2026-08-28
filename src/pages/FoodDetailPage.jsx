@@ -17,6 +17,7 @@ const CATEGORY_FALLBACK_EMOJI = {
   Vegetables: '🥕',
   'Nuts & Seeds': '🌰',
   'Dairy & Milk Products': '🥛',
+  'Meat & Seafood': '🍗',
 };
 
 export default function FoodDetailPage() {
@@ -62,6 +63,7 @@ export default function FoodDetailPage() {
     Vegetables: 'vegetables',
     'Nuts & Seeds': 'nuts-seeds',
     'Dairy & Milk Products': 'dairy',
+    'Meat & Seafood': 'meat-seafood',
   };
 
   return (
@@ -137,6 +139,11 @@ export default function FoodDetailPage() {
               )}
 
               <div className="food-detail-meta">
+                {food.type && (
+                  <span style={{ fontSize: '0.78rem', color: 'var(--clr-text-muted)', fontWeight: 600 }}>
+                    Type: {food.type}
+                  </span>
+                )}
                 {food.ifct_code && (
                   <span style={{ fontSize: '0.78rem', color: 'var(--clr-text-muted)', fontWeight: 600 }}>
                     IFCT Code: {food.ifct_code}

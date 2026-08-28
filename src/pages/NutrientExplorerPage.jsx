@@ -20,7 +20,7 @@ const NUTRIENTS = [
   { key: 'vitamin_e',     icon: '🌻', label: 'Vitamin E',     unit: 'mg',   desc: 'Skin protection' },
 ];
 
-const FALLBACK_EMOJI = { Fruits: '🍎', Vegetables: '🥕', 'Nuts & Seeds': '🌰', 'Dairy & Milk Products': '🥛' };
+const FALLBACK_EMOJI = { Fruits: '🍎', Vegetables: '🥕', 'Nuts & Seeds': '🌰', 'Dairy & Milk Products': '🥛', 'Meat & Seafood': '🍗' };
 
 export default function NutrientExplorerPage() {
   const { allFoods, loading } = useApp();

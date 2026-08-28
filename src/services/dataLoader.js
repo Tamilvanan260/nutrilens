@@ -11,6 +11,7 @@ import {
   normalizeVegetable,
   normalizeNut,
   normalizeDairy,
+  normalizeMeat,
 } from '../utils/normalize.js';
 
 const BASE = import.meta.env.BASE_URL; // '/' in dev, '/nutrilens/' in production
@@ -20,6 +21,7 @@ const CSV_FILES = [
   { path: `${BASE}data/vegetables.csv`,         normalize: normalizeVegetable, category: 'Vegetables' },
   { path: `${BASE}data/nuts_seeds.csv`,         normalize: normalizeNut,       category: 'Nuts & Seeds' },
   { path: `${BASE}data/dairy_milk_products.csv`,normalize: normalizeDairy,     category: 'Dairy & Milk Products' },
+  { path: `${BASE}data/meat_seafood.csv`,        normalize: normalizeMeat,      category: 'Meat & Seafood' },
 ];
 
 // Simple in-memory cache

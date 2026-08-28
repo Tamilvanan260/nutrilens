@@ -11,6 +11,7 @@ const CATEGORY_FOLDER = {
   Vegetables: 'vegetables',
   'Nuts & Seeds': 'nuts-seeds',
   'Dairy & Milk Products': 'dairy',
+  'Meat & Seafood': 'meat-seafood',
 };
 
 // Category emoji
@@ -19,6 +20,7 @@ export const CATEGORY_EMOJI = {
   Vegetables: '🥕',
   'Nuts & Seeds': '🌰',
   'Dairy & Milk Products': '🥛',
+  'Meat & Seafood': '🍗',
 };
 
 // Category CSS class
@@ -27,6 +29,7 @@ export const CATEGORY_CLASS = {
   Vegetables: 'cat-vegetables',
   'Nuts & Seeds': 'cat-nuts',
   'Dairy & Milk Products': 'cat-dairy',
+  'Meat & Seafood': 'cat-meat',
 };
 
 /**
@@ -209,4 +212,40 @@ function normalizeDairy(row) {
   };
 }
 
-export { normalizeFruit, normalizeVegetable, normalizeNut, normalizeDairy };
+/**
+ * Normalize a meat & seafood CSV row → unified food object
+ */
+function normalizeMeat(row) {
+  const name = (row['Food_Item'] || '').trim();
+  const slug = slugify(name);
+  const category = 'Meat & Seafood';
+  return {
+    id: `meat-${slug}`,
+    slug,
+    category,
+    categoryEmoji: CATEGORY_EMOJI[category],
+    categoryClass: CATEGORY_CLASS[category],
+    food_name: name,
+    type: (row['Type'] || '').trim() || null,
+    scientific_name: (row['Scientific_Name'] || '').trim() || null,
+    ifct_code: (row['IFCT_Code'] || '').trim() || null,
+    image: buildImagePath(slug, category),
+    calories:      parseNum(row['Calories_kcal']),
+    protein:       parseNum(row['Protein_g']),
+    fat:           parseNum(row['Fat_g']),
+    carbohydrates: parseNum(row['Carbohydrates_g']),
+    fiber:         parseNum(row['Fiber_g']),
+    calcium:       parseNum(row['Calcium_mg']),
+    iron:          parseNum(row['Iron_mg']),
+    vitamin_c:     parseNum(row['Vitamin_C_mg']),
+    potassium:     parseNum(row['Potassium_mg']),
+    magnesium:     parseNum(row['Magnesium_mg']),
+    vitamin_e:     parseNum(row['Vitamin_E_mg']),
+    health_benefits: splitList(row['health_benefits'] || row['Health_Benefits'] || ''),
+    health_benefits_raw: (row['health_benefits'] || row['Health_Benefits'] || '').trim(),
+    intake_methods: splitList(row['intake_methods'] || row['Intake_Methods'] || ''),
+    intake_methods_raw: (row['intake_methods'] || row['Intake_Methods'] || '').trim(),
+  };
+}
+
+export { normalizeFruit, normalizeVegetable, normalizeNut, normalizeDairy, normalizeMeat };
