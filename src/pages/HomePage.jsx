@@ -6,6 +6,7 @@ import { getCategoryCounts } from '../services/dataLoader.js';
 import CategoryCard from '../components/CategoryCard.jsx';
 import LoadingSpinner from '../components/LoadingSpinner.jsx';
 import FoodCard from '../components/FoodCard.jsx';
+import VitaminsGuide from '../components/VitaminsGuide.jsx';
 
 const CATEGORY_ORDER = ['Fruits', 'Vegetables', 'Nuts & Seeds', 'Dairy & Milk Products', 'Meat & Seafood'];
 
@@ -165,6 +166,9 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* ===== VITAMINS GUIDE ===== */}
+      <VitaminsGuide />
 
       {/* ===== FEATURED SNIPPET ===== */}
       <section style={{ paddingBottom: 'var(--space-16)' }} aria-labelledby="why-title">

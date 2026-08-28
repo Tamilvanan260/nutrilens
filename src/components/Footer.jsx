@@ -33,9 +33,10 @@ export default function Footer() {
           <div>
             <div className="footer-section-title">Features</div>
             <nav className="footer-links" aria-label="Site features">
-              <Link to="/explore"   className="footer-link">🔍 Explore All Foods</Link>
-              <Link to="/nutrients" className="footer-link">📊 Nutrient Explorer</Link>
-              <Link to="/favorites" className="footer-link">❤️ My Favorites</Link>
+              <Link to="/explore"    className="footer-link">🔍 Explore All Foods</Link>
+              <Link to="/nutrients"  className="footer-link">📊 Nutrient Explorer</Link>
+              <Link to="/favorites"  className="footer-link">❤️ My Favorites</Link>
+              <a href="/#vitamins-guide" className="footer-link">💊 Essential Vitamins Guide</a>
             </nav>
           </div>
 
