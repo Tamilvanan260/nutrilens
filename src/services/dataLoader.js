@@ -59,8 +59,12 @@ export async function loadAllFoods() {
   if (_cachedData) return _cachedData;
 
   try {
+    const timestamp = Date.now();
     const results = await Promise.all(
-      CSV_FILES.map(({ path, normalize }) => parseCSV(path, normalize))
+      CSV_FILES.map(({ path, normalize }) => {
+        const cleanPath = path.split('?')[0];
+        return parseCSV(`${cleanPath}?t=${timestamp}`, normalize);
+      })
     );
     _cachedData = results.flat();
     return _cachedData;
