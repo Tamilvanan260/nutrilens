@@ -12,6 +12,7 @@ import CategoryPage from './pages/CategoryPage.jsx';
 import FoodDetailPage from './pages/FoodDetailPage.jsx';
 import FavoritesPage from './pages/FavoritesPage.jsx';
 import NutrientExplorerPage from './pages/NutrientExplorerPage.jsx';
+import VitaminsPage from './pages/VitaminsPage.jsx';
 
 // 404 page
 function NotFoundPage() {
@@ -50,6 +51,7 @@ export default function App() {
           <Route path="/food/:slug"        element={<FoodDetailPage />} />
           <Route path="/favorites"         element={<FavoritesPage />} />
           <Route path="/nutrients"         element={<NutrientExplorerPage />} />
+          <Route path="/vitamins"          element={<VitaminsPage />} />
           <Route path="*"                  element={<NotFoundPage />} />
         </Routes>
 

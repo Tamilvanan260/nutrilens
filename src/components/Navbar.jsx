@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { to: '/',          label: 'Home',     end: true  },
   { to: '/explore',   label: 'Explore',  end: false },
   { to: '/nutrients', label: 'Nutrients',end: false },
+  { to: '/vitamins',  label: '💊 Vitamins', end: false },
   { to: '/favorites', label: '❤️ Favorites', end: false },
 ];
 

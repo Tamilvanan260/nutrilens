@@ -1,5 +1,7 @@
 // KeyVitaminCard.jsx — displays characteristic key vitamin with dynamic icon
 
+import { Link } from 'react-router-dom';
+
 const VITAMIN_ICONS = {
   'Vitamin A': '🥕',
   'Vitamin A (Beta-Carotene)': '🥕',
@@ -61,6 +63,23 @@ export default function KeyVitaminCard({ food }) {
             "{food.vitamin_explanation}"
           </p>
         )}
+
+        <div style={{ marginTop: 'var(--space-3)', textAlign: 'right' }}>
+          <Link
+            to="/vitamins"
+            style={{
+              fontSize: '0.8rem',
+              fontWeight: 700,
+              color: 'var(--clr-green-600)',
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '4px'
+            }}
+          >
+            Explore all vitamins in Vitamins Guide →
+          </Link>
+        </div>
       </div>
     </div>
   );
