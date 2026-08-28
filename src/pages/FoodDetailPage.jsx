@@ -5,6 +5,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext.jsx';
 import { findFoodBySlug } from '../services/dataLoader.js';
 import NutritionGrid from '../components/NutritionGrid.jsx';
+import KeyVitaminCard from '../components/KeyVitaminCard.jsx';
 import HealthBenefits from '../components/HealthBenefits.jsx';
 import IntakeMethods from '../components/IntakeMethods.jsx';
 import ComparisonTable from '../components/ComparisonTable.jsx';
@@ -160,6 +161,9 @@ export default function FoodDetailPage() {
                 )}
               </div>
             </div>
+
+            {/* Key Vitamin Card */}
+            <KeyVitaminCard food={food} />
 
             {/* Nutrition Grid */}
             <NutritionGrid food={food} />

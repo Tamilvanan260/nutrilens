@@ -73,12 +73,30 @@ function buildImagePath(slug, category) {
 }
 
 /**
+ * Helper to extract key vitamin fields from CSV row
+ */
+function extractKeyVitamin(row) {
+  const kv = (row['Key_Vitamin'] || '').trim();
+  const kvVal = (row['Key_Vitamin_Value'] || '').trim();
+  const kvUnit = (row['Key_Vitamin_Unit'] || '').trim();
+  const kvExp = (row['Vitamin_Explanation'] || '').trim();
+
+  return {
+    key_vitamin: kv || null,
+    key_vitamin_value: kvVal || null,
+    key_vitamin_unit: kvUnit || null,
+    vitamin_explanation: kvExp || null,
+  };
+}
+
+/**
  * Normalize a fruits CSV row → unified food object
  */
 function normalizeFruit(row) {
   const name = (row['Food_Item'] || '').trim();
   const slug = slugify(name);
   const category = 'Fruits';
+  const vit = extractKeyVitamin(row);
   return {
     id: `fruits-${slug}`,
     slug,
@@ -104,6 +122,7 @@ function normalizeFruit(row) {
     health_benefits_raw: (row['health_benefits'] || row['Health_Benefits'] || '').trim(),
     intake_methods: splitList(row['intake_methods'] || row['Intake_Methods'] || ''),
     intake_methods_raw: (row['intake_methods'] || row['Intake_Methods'] || '').trim(),
+    ...vit,
   };
 }
 
@@ -114,6 +133,7 @@ function normalizeVegetable(row) {
   const name = (row['Food_Item'] || '').trim();
   const slug = slugify(name);
   const category = 'Vegetables';
+  const vit = extractKeyVitamin(row);
   return {
     id: `vegetables-${slug}`,
     slug,
@@ -139,6 +159,7 @@ function normalizeVegetable(row) {
     health_benefits_raw: (row['health_benefits'] || row['Health_Benefits'] || '').trim(),
     intake_methods: splitList(row['intake_methods'] || row['Intake_Methods'] || ''),
     intake_methods_raw: (row['intake_methods'] || row['Intake_Methods'] || '').trim(),
+    ...vit,
   };
 }
 
@@ -149,6 +170,7 @@ function normalizeNut(row) {
   const name = (row['Food_Item'] || '').trim();
   const slug = slugify(name);
   const category = 'Nuts & Seeds';
+  const vit = extractKeyVitamin(row);
   return {
     id: `nuts-${slug}`,
     slug,
@@ -174,6 +196,7 @@ function normalizeNut(row) {
     health_benefits_raw: (row['health_benefits'] || row['Health_Benefits'] || '').trim(),
     intake_methods: splitList(row['intake_methods'] || row['Intake_Methods'] || ''),
     intake_methods_raw: (row['intake_methods'] || row['Intake_Methods'] || '').trim(),
+    ...vit,
   };
 }
 
@@ -184,6 +207,7 @@ function normalizeDairy(row) {
   const name = (row['Food_Item'] || '').trim();
   const slug = slugify(name);
   const category = 'Dairy & Milk Products';
+  const vit = extractKeyVitamin(row);
   return {
     id: `dairy-${slug}`,
     slug,
@@ -209,6 +233,7 @@ function normalizeDairy(row) {
     health_benefits_raw: (row['health_benefits'] || row['Health_Benefits'] || '').trim(),
     intake_methods: splitList(row['intake_methods'] || row['Intake_Methods'] || ''),
     intake_methods_raw: (row['intake_methods'] || row['Intake_Methods'] || '').trim(),
+    ...vit,
   };
 }
 
@@ -219,6 +244,7 @@ function normalizeMeat(row) {
   const name = (row['Food_Item'] || '').trim();
   const slug = slugify(name);
   const category = 'Meat & Seafood';
+  const vit = extractKeyVitamin(row);
   return {
     id: `meat-${slug}`,
     slug,
@@ -245,6 +271,7 @@ function normalizeMeat(row) {
     health_benefits_raw: (row['health_benefits'] || row['Health_Benefits'] || '').trim(),
     intake_methods: splitList(row['intake_methods'] || row['Intake_Methods'] || ''),
     intake_methods_raw: (row['intake_methods'] || row['Intake_Methods'] || '').trim(),
+    ...vit,
   };
 }
 
