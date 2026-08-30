@@ -69,7 +69,7 @@ function splitList(str) {
 function buildImagePath(slug, category) {
   const folder = CATEGORY_FOLDER[category] || 'misc';
   const base = import.meta.env.BASE_URL; // '/' in dev, '/nutrilens/' in production
-  return `${base}images/${folder}/${slug}.png`;
+  return `${base}images/${folder}/${slug}.png?v=3`;
 }
 
 /**

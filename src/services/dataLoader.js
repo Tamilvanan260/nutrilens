@@ -17,11 +17,11 @@ import {
 const BASE = import.meta.env.BASE_URL; // '/' in dev, '/nutrilens/' in production
 
 const CSV_FILES = [
-  { path: `${BASE}data/fruits.csv?v=2`,             normalize: normalizeFruit,     category: 'Fruits' },
-  { path: `${BASE}data/vegetables.csv?v=2`,         normalize: normalizeVegetable, category: 'Vegetables' },
-  { path: `${BASE}data/nuts_seeds.csv?v=2`,         normalize: normalizeNut,       category: 'Nuts & Seeds' },
-  { path: `${BASE}data/dairy_milk_products.csv?v=2`,normalize: normalizeDairy,     category: 'Dairy & Milk Products' },
-  { path: `${BASE}data/meat_seafood.csv?v=2`,        normalize: normalizeMeat,      category: 'Meat & Seafood' },
+  { path: `${BASE}data/fruits.csv?v=3`,             normalize: normalizeFruit,     category: 'Fruits' },
+  { path: `${BASE}data/vegetables.csv?v=3`,         normalize: normalizeVegetable, category: 'Vegetables' },
+  { path: `${BASE}data/nuts_seeds.csv?v=3`,         normalize: normalizeNut,       category: 'Nuts & Seeds' },
+  { path: `${BASE}data/dairy_milk_products.csv?v=3`,normalize: normalizeDairy,     category: 'Dairy & Milk Products' },
+  { path: `${BASE}data/meat_seafood.csv?v=3`,        normalize: normalizeMeat,      category: 'Meat & Seafood' },
 ];
 
 // Simple in-memory cache
