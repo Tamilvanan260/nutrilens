@@ -23,6 +23,7 @@ export function slugify(name) {
     'Prawn / Eral': 'prawn-eral',
     'Goat Blood / Ratham': 'goat-blood-ratham',
     'Dates (Dry)': 'dates-dry',
+    'Soya Chunks / Meal Maker': 'soya-chunks',
   };
 
   if (customSlugs[name]) return customSlugs[name];
